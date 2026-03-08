@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aasia Nawaz | Digital Marketing Portfolio</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Lightbox -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #8B5CF6;
+            --primary-light: #A78BFA;
+            --primary-dark: #7C3AED;
+            --secondary: #EC4899;
+            --secondary-light: #F9A8D4;
+            --accent: #10B981;
+            --accent-light: #6EE7B7;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --gradient-1: linear-gradient(135deg, #8B5CF6, #EC4899);
+            --gradient-2: linear-gradient(45deg, #10B981, #8B5CF6);
+            --gradient-3: linear-gradient(225deg, #EC4899, #10B981);
+            --shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #F3E8FF, #FFE4F3);
+            padding-top: 80px;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .skill-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        /* Project Cards */
+        .project-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        .project-header {
+            padding: 40px;
+            color: white;
+        }
+
+        .project-header.meta { background: linear-gradient(135deg, #1877F2, #42B72A); }
+        .project-header.social { background: linear-gradient(135deg, #E4405F, #BD3381); }
+        .project-header.campaign { background: linear-gradient(135deg, #F9A826, #F97316); }
+        .project-header.web { background: linear-gradient(135deg, #0F172A, #3B82F6); }
+
+        .project-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-meta span {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        .project-content {
+            padding: 40px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        /* Gallery Grid - UNIQUE IMAGES FOR EACH PROJECT */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            height: 150px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '\f00e';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            background: rgba(139,92,246,0.8);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Proof Section */
+        .proof-section {
+            background: #F3F4F6;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .proof-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .proof-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .proof-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .proof-badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 15px;
+            background: var(--accent-light);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 30px;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #6B7280;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--primary);
+        }
+
+        /* Client Details */
+        .client-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+            padding: 20px;
+            background: #F3F4F6;
+            border-radius: 15px;
+        }
+
+        .client-detail-item {
+            text-align: center;
+        }
+
+        .client-detail-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            background: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero .container,
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .client-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Aasia Nawaz</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>
+                    Aasia Nawaz
+                    <span>Digital Marketing Expert</span>
+                </h1>
+                <p>4+ years of experience in Meta Ads, Social Media, Campaign Management & Web Development</p>
+                <a href="#portfolio" class="btn" style="background: var(--gradient-1); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; display: inline-block;">View Success Stories</a>
+                <div class="hero-stats">
+                    <div>
+                        <div class="stat-number">50+</div>
+                        <div>Projects</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">35+</div>
+                        <div>Happy Clients</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">4</div>
+                        <div>Skills</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Aasia Nawaz">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My <span>Expertise</span></h2>
+            <p class="section-subtitle" style="text-align: center; color: #6B7280; margin-bottom: 50px;">Four core areas with proven track record</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="fade-up">
+                    <div class="skill-icon"><i class="fab fa-facebook"></i></div>
+                    <h3>Meta Ads</h3>
+                    <p>Facebook & Instagram advertising specialist with 4.8x average ROAS</p>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-icon"><i class="fab fa-instagram"></i></div>
+                    <h3>Social Media</h3>
+                    <p>Organic growth expert - 200% average follower increase in 3 months</p>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Campaigns</h3>
+                    <p>Integrated marketing campaigns with 300%+ ROI</p>
+                </div>
+                
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>Custom WordPress & e-commerce sites with 98% SEO scores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Client <span>Success Stories</span></h2>
+            <p class="section-subtitle" style="text-align: center; color: #6B7280; margin-bottom: 50px;">Detailed case studies with complete client information</p>
+
+            <!-- PROJECT 1: META ADS - FASHION BRAND -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-header meta">
+                    <h2>Meta Ads Campaign - StyleBySarah</h2>
+                    <div class="project-meta">
+                        <span><i class="far fa-calendar"></i> Jan-Mar 2026</span>
+                        <span><i class="fas fa-tag"></i> Meta Ads</span>
+                        <span><i class="fas fa-map-pin"></i> Lahore, Pakistan</span>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-grid">
+                        <div>
+                            <h3>Client Details</h3>
+                            <div class="client-details">
+                                <div class="client-detail-item">
+                                    <i class="fas fa-user"></i>
+                                    <h4>Sarah Khan</h4>
+                                    <p>Founder, StyleBySarah</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <h4>Since 2022</h4>
+                                    <p>3+ years in business</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-tag"></i>
+                                    <h4>Fashion</h4>
+                                    <p>Women's clothing</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-users"></i>
+                                    <h4>10K+</h4>
+                                    <p>Instagram followers</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <h4>$50K+</h4>
+                                    <p>Monthly revenue</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <h4>Lahore</h4>
+                                    <p>DHA Phase 5</p>
+                                </div>
+                            </div>
+
+                            <h3 style="margin-top: 30px;">Campaign Overview</h3>
+                            <ul style="margin: 20px 0; list-style: none;">
+                                <li style="margin-bottom: 10px;">✓ Facebook & Instagram ads running simultaneously</li>
+                                <li style="margin-bottom: 10px;">✓ 7 different ad creatives tested (3 videos, 4 images)</li>
+                                <li style="margin-bottom: 10px;">✓ Audience: Women 18-45, fashion interested</li>
+                                <li style="margin-bottom: 10px;">✓ Budget: $800/month</li>
+                            </ul>
+                            
+                            <div style="background: #F3F4F6; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                                <h4 style="color: var(--primary);">Campaign Results:</h4>
+                                <p>ROAS: 4.8x | Sales: $3,840 | Clicks: 22,500 | CTR: 3.2% | Cost per click: $0.35</p>
+                            </div>
+                        </div>
+                        
+                        <!-- UNIQUE GALLERY FOR META ADS -->
+                        <div>
+                            <h3>Campaign Gallery</h3>
+                            <div class="gallery-grid">
+                                <a href="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="meta" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Ad Creative 1">
+                                </a>
+                                <a href="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="meta" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Ad Creative 2">
+                                </a>
+                                <a href="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="meta" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Ad Dashboard">
+                                </a>
+                                <a href="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="meta" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Analytics">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proof Section -->
+                    <div class="proof-section">
+                        <h3 style="margin-bottom: 20px;">📊 Click to Verify Results</h3>
+                        <div class="proof-grid">
+                            <div class="proof-item" onclick="openModal('metaAnalytics')">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Meta Analytics</h4>
+                                <p>Complete ad performance</p>
+                                <span class="proof-badge">View Report</span>
+                            </div>
+                            
+                            <div class="proof-item" onclick="openModal('metaScreenshots')">
+                                <i class="fas fa-camera"></i>
+                                <h4>Ad Screenshots</h4>
+                                <p>Live dashboard images</p>
+                                <span class="proof-badge">View Gallery</span>
+                            </div>
+                            
+                            <div class="proof-item" onclick="openModal('metaTestimonial')">
+                                <i class="fas fa-comment"></i>
+                                <h4>Video Testimonial</h4>
+                                <p>Client interview (3 min)</p>
+                                <span class="proof-badge">Watch Now</span>
+                            </div>
+                        </div>
+                        <button class="btn-small" onclick="downloadFile('meta')" style="padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 30px; cursor: pointer;">
+                            <i class="fas fa-file-pdf"></i> Download Complete Case Study
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 2: SOCIAL MEDIA - CAFE DELIGHTS -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-header social">
+                    <h2>Social Media Growth - Cafe Delights</h2>
+                    <div class="project-meta">
+                        <span><i class="far fa-calendar"></i> Feb-Apr 2026</span>
+                        <span><i class="fas fa-tag"></i> Social Media</span>
+                        <span><i class="fas fa-map-pin"></i> Karachi, Pakistan</span>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-grid">
+                        <div>
+                            <h3>Client Details</h3>
+                            <div class="client-details">
+                                <div class="client-detail-item">
+                                    <i class="fas fa-user"></i>
+                                    <h4>Ahmed Raza</h4>
+                                    <p>Owner, Cafe Delights</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <h4>Est. 2023</h4>
+                                    <p>2 years old</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-utensils"></i>
+                                    <h4>Restaurant</h4>
+                                    <p>Continental & Desi</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-users"></i>
+                                    <h4>8.5K+</h4>
+                                    <p>Instagram followers</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <h4>$15K+</h4>
+                                    <p>Monthly revenue</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <h4>Karachi</h4>
+                                    <p>Clifton</p>
+                                </div>
+                            </div>
+
+                            <h3 style="margin-top: 30px;">Strategy Overview</h3>
+                            <ul style="margin: 20px 0; list-style: none;">
+                                <li style="margin-bottom: 10px;">✓ Daily posts on Instagram & Facebook</li>
+                                <li style="margin-bottom: 10px;">✓ 25 reel videos created (food preparation, customer reviews)</li>
+                                <li style="margin-bottom: 10px;">✓ 5 food influencers collaborated</li>
+                                <li style="margin-bottom: 10px;">✓ Instagram stories with polls & Q&As</li>
+                            </ul>
+                            
+                            <div style="background: #F3F4F6; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                                <h4 style="color: var(--primary);">Growth Results:</h4>
+                                <p>Followers: 2,000 → 8,500 | Engagement: 1.2% → 4.8% | Reach: 50K+/week | Daily orders: +150%</p>
+                            </div>
+                        </div>
+                        
+                        <!-- UNIQUE GALLERY FOR SOCIAL MEDIA -->
+                        <div>
+                            <h3>Content Gallery</h3>
+                            <div class="gallery-grid">
+                                <a href="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="social" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Food Post">
+                                </a>
+                                <a href="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="social" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Restaurant">
+                                </a>
+                                <a href="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="social" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Food">
+                                </a>
+                                <a href="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="social" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Chef">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proof Section -->
+                    <div class="proof-section">
+                        <h3 style="margin-bottom: 20px;">📊 Click to Verify Results</h3>
+                        <div class="proof-grid">
+                            <div class="proof-item" onclick="openModal('socialInsights')">
+                                <i class="fab fa-instagram"></i>
+                                <h4>Instagram Insights</h4>
+                                <p>Complete growth data</p>
+                                <span class="proof-badge">View Data</span>
+                            </div>
+                            
+                            <div class="proof-item" onclick="openModal('socialScreenshots')">
+                                <i class="fas fa-camera"></i>
+                                <h4>Content Gallery</h4>
+                                <p>All posts & reels</p>
+                                <span class="proof-badge">View Gallery</span>
+                            </div>
+                            
+                            <div class="proof-item" onclick="openModal('socialTestimonial')">
+                                <i class="fas fa-comment"></i>
+                                <h4>Video Testimonial</h4>
+                                <p>Client interview (2 min)</p>
+                                <span class="proof-badge">Watch Now</span>
+                            </div>
+                        </div>
+                        <button class="btn-small" onclick="downloadFile('social')" style="padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 30px; cursor: pointer;">
+                            <i class="fas fa-file-pdf"></i> Download Complete Case Study
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 3: CAMPAIGN MANAGEMENT - SHOPONLINE.PK -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-header campaign">
+                    <h2>Integrated Campaign - ShopOnline.pk</h2>
+                    <div class="project-meta">
+                        <span><i class="far fa-calendar"></i> Mar-May 2026</span>
+                        <span><i class="fas fa-tag"></i> Campaign</span>
+                        <span><i class="fas fa-map-pin"></i> Islamabad, Pakistan</span>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-grid">
+                        <div>
+                            <h3>Client Details</h3>
+                            <div class="client-details">
+                                <div class="client-detail-item">
+                                    <i class="fas fa-user"></i>
+                                    <h4>Bilal Ahmed</h4>
+                                    <p>CEO, ShopOnline.pk</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <h4>Since 2021</h4>
+                                    <p>4 years in business</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-laptop"></i>
+                                    <h4>E-commerce</h4>
+                                    <p>Electronics</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-users"></i>
+                                    <h4>50K+</h4>
+                                    <p>Email subscribers</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <h4>$100K+</h4>
+                                    <p>Monthly revenue</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <h4>Islamabad</h4>
+                                    <p>F-7 Markaz</p>
+                                </div>
+                            </div>
+
+                            <h3 style="margin-top: 30px;">Campaign Overview</h3>
+                            <ul style="margin: 20px 0; list-style: none;">
+                                <li style="margin-bottom: 10px;">✓ 360-degree marketing campaign (email + social + ads)</li>
+                                <li style="margin-bottom: 10px;">✓ Email marketing to 50,000 subscribers</li>
+                                <li style="margin-bottom: 10px;">✓ Social media ads + Google Ads integration</li>
+                                <li style="margin-bottom: 10px;">✓ Special Ramadan discount offers</li>
+                            </ul>
+                            
+                            <div style="background: #F3F4F6; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                                <h4 style="color: var(--primary);">Campaign Results:</h4>
+                                <p>Sales: $45,000 | Conversion Rate: 3.8% | ROI: 380% | New customers: 1,200+</p>
+                            </div>
+                        </div>
+                        
+                        <!-- UNIQUE GALLERY FOR CAMPAIGN -->
+                        <div>
+                            <h3>Campaign Gallery</h3>
+                            <div class="gallery-grid">
+                                <a href="https://images.unsplash.com/photo-1557200134-90327ee9fafa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="campaign" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Email Campaign">
+                                </a>
+                                <a href="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="campaign" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Analytics">
+                                </a>
+                                <a href="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="campaign" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Dashboard">
+                                </a>
+                                <a href="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="campaign" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Marketing">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proof Section -->
+                    <div class="proof-section">
+                        <h3 style="margin-bottom: 20px;">📊 Click to Verify Results</h3>
+                        <div class="proof-grid">
+                            <div class="proof-item" onclick="openModal('campaignAnalytics')">
+                                <i class="fas fa-chart-pie"></i>
+                                <h4>Campaign Analytics</h4>
+                                <p>Channel-wise performance</p>
+                                <span class="proof-badge">View Report</span>
+                            </div>
+                            
+                            <div class="proof-item" onclick="openModal('campaignScreenshots')">
+                                <i class="fas fa-camera"></i>
+                                <h4>Campaign Assets</h4>
+                                <p>Emails & ad creatives</p>
+                                <span class="proof-badge">View Gallery</span>
+                            </div>
+                            
+                            <div class="proof-item" onclick="openModal('campaignTestimonial')">
+                                <i class="fas fa-comment"></i>
+                                <h4>Video Testimonial</h4>
+                                <p>CEO interview (4 min)</p>
+                                <span class="proof-badge">Watch Now</span>
+                            </div>
+                        </div>
+                        <button class="btn-small" onclick="downloadFile('campaign')" style="padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 30px; cursor: pointer;">
+                            <i class="fas fa-file-pdf"></i> Download Complete Case Study
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 4: WEBSITE DEVELOPMENT - TECHSOLUTIONS.PK -->
+            <div class="project-card" data-aos="fade-up">
+                <div class="project-header web">
+                    <h2>Website Development - TechSolutions.pk</h2>
+                    <div class="project-meta">
+                        <span><i class="far fa-calendar"></i> Apr-Jun 2026</span>
+                        <span><i class="fas fa-tag"></i> Web Dev</span>
+                        <span><i class="fas fa-map-pin"></i> Lahore, Pakistan</span>
+                    </div>
+                </div>
+                
+                <div class="project-content">
+                    <div class="project-grid">
+                        <div>
+                            <h3>Client Details</h3>
+                            <div class="client-details">
+                                <div class="client-detail-item">
+                                    <i class="fas fa-user"></i>
+                                    <h4>Usman Khalid</h4>
+                                    <p>Founder, TechSolutions</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <h4>Since 2020</h4>
+                                    <p>5 years in business</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-laptop-code"></i>
+                                    <h4>Tech Startup</h4>
+                                    <p>IT services</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-users"></i>
+                                    <h4>15+</h4>
+                                    <p>Team members</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <h4>$200K+</h4>
+                                    <p>Annual revenue</p>
+                                </div>
+                                <div class="client-detail-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <h4>Lahore</h4>
+                                    <p>Gulberg</p>
+                                </div>
+                            </div>
+
+                            <h3 style="margin-top: 30px;">Project Overview</h3>
+                            <ul style="margin: 20px 0; list-style: none;">
+                                <li style="margin-bottom: 10px;">✓ Custom WordPress website with 25 pages</li>
+                                <li style="margin-bottom: 10px;">✓ E-commerce functionality with payment integration</li>
+                                <li style="margin-bottom: 10px;">✓ SEO optimization & speed optimization</li>
+                                <li style="margin-bottom: 10px;">✓ Mobile responsive design with custom theme</li>
+                            </ul>
+                            
+                            <div style="background: #F3F4F6; padding: 20px; border-radius: 10px; margin-top: 20px;">
+                                <h4 style="color: var(--primary);">Performance Results:</h4>
+                                <p>Load Time: 1.1s | SEO Score: 99% | Mobile Score: 98% | Traffic: +280% in 3 months</p>
+                            </div>
+                        </div>
+                        
+                        <!-- UNIQUE GALLERY FOR WEB DEVELOPMENT -->
+                        <div>
+                            <h3>Website Gallery</h3>
+                            <div class="gallery-grid">
+                                <a href="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="web" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Homepage">
+                                </a>
+                                <a href="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="web" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Dashboard">
+                                </a>
+                                <a href="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="web" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Mobile View">
+                                </a>
+                                <a href="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" data-lightbox="web" class="gallery-item">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250&fit=crop" alt="Analytics">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proof Section -->
+                    <div class="proof-section">
+                        <h3 style="margin-bottom: 20px;">📊 Click to Verify Results</h3>
+                        <div class="proof-grid">
+                            <div class="proof-item" onclick="openModal('webAnalytics')">
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Traffic Analytics</h4>
+                                <p>Before/After comparison</p>
+                                <span class="proof-badge">View Data</span>
+                            </div>
+                            
+                            <div class="proof-item" onclick="openModal('webScreenshots')">
+                                <i class="fas fa-camera"></i>
+                                <h4>Website Screenshots</h4>
+                                <p>All 25 pages</p>
+                                <span class="proof-badge">View Gallery</span>
+                            </div>
+                            
+                            <div class="proof-item" onclick="openModal('webTestimonial')">
+                                <i class="fas fa-comment"></i>
+                                <h4>Video Testimonial</h4>
+                                <p>Founder interview (3 min)</p>
+                                <span class="proof-badge">Watch Now</span>
+                            </div>
+                        </div>
+                        <button class="btn-small" onclick="downloadFile('web')" style="padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 30px; cursor: pointer;">
+                            <i class="fas fa-file-pdf"></i> Download Complete Case Study
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALS - ALL WORKING -->
+
+    <!-- Meta Analytics Modal -->
+    <div id="metaAnalytics" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('metaAnalytics')">&times;</span>
+            <h2 style="margin-bottom: 30px;">Meta Ads - Complete Analytics</h2>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" style="width: 100%; border-radius: 15px; margin-bottom: 20px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="background: #F3F4F6; padding: 20px; border-radius: 10px;">
+                    <h4>Campaign Performance</h4>
+                    <p>Impressions: 220,500</p>
+                    <p>Clicks: 22,500</p>
+                    <p>CTR: 3.2%</p>
+                    <p>Conversions: 820</p>
+                    <p>Cost per conversion: $0.98</p>
+                </div>
+                <div style="background: #F3F4F6; padding: 20px; border-radius: 10px;">
+                    <h4>ROI Analysis</h4>
+                    <p>Ad Spend: $800</p>
+                    <p>Revenue: $3,840</p>
+                    <p>ROAS: 4.8x</p>
+                    <p>Profit: $3,040</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Meta Screenshots Modal -->
+    <div id="metaScreenshots" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('metaScreenshots')">&times;</span>
+            <h2 style="margin-bottom: 30px;">Ad Dashboard Screenshots</h2>
+            <div class="modal-gallery" style="display: grid; grid-template-columns: repeat(3,1fr); gap: 15px;">
+                <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&fit=crop" onclick="openLightbox(this.src)">
+                <img src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&fit=crop" onclick="openLightbox(this.src)">
+                <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&fit=crop" onclick="openLightbox(this.src)">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&fit=crop" onclick="openLightbox(this.src)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Meta Testimonial Modal -->
+    <div id="metaTestimonial" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('metaTestimonial')">&times;</span>
+            <div style="background: var(--gradient-1); padding: 40px; border-radius: 20px; color: white;">
+                <i class="fas fa-quote-right" style="font-size: 4rem; opacity: 0.3; margin-bottom: 20px;"></i>
+                <p style="font-size: 1.5rem; margin-bottom: 20px;">"Aasia's Meta Ads campaign brought us incredible results. 4.8x ROAS in just 3 months! She provided daily updates and complete transparency. Our sales have never been better."</p>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <img src="https://images.unsplash.com/photo-1494790108777-766ef1f5f703?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&fit=crop" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <h4>Sarah Khan</h4>
+                        <p>Founder, StyleBySarah</p>
+                        <p style="font-size: 0.9rem;">3 years in business | 10K+ followers</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 30px; text-align: center;">
+                <button class="btn-small" onclick="alert('Video testimonial would play here')">▶ Play Video Testimonial (3:24)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Insights Modal -->
+    <div id="socialInsights" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('socialInsights')">&times;</span>
+            <h2 style="margin-bottom: 30px;">Instagram Analytics Report</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="background: #F3F4F6; padding: 20px; border-radius: 10px;">
+                    <h4>Before Campaign</h4>
+                    <p>Followers: 2,000</p>
+                    <p>Engagement: 1.2%</p>
+                    <p>Weekly Reach: 5,000</p>
+                    <p>Posts/Week: 3</p>
+                </div>
+                <div style="background: #F3F4F6; padding: 20px; border-radius: 10px;">
+                    <h4>After Campaign</h4>
+                    <p>Followers: 8,500</p>
+                    <p>Engagement: 4.8%</p>
+                    <p>Weekly Reach: 50,000+</p>
+                    <p>Posts/Week: 7</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Testimonial Modal -->
+    <div id="socialTestimonial" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('socialTestimonial')">&times;</span>
+            <div style="background: var(--gradient-2); padding: 40px; border-radius: 20px; color: white;">
+                <i class="fas fa-quote-right" style="font-size: 4rem; opacity: 0.3; margin-bottom: 20px;"></i>
+                <p style="font-size: 1.5rem; margin-bottom: 20px;">"Our cafe was struggling with online presence. Aasia transformed our Instagram completely. Now 80% of our customers come through social media!"</p>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&fit=crop" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <h4>Ahmed Raza</h4>
+                        <p>Owner, Cafe Delights</p>
+                        <p style="font-size: 0.9rem;">2 locations in Karachi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Campaign Analytics Modal -->
+    <div id="campaignAnalytics" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('campaignAnalytics')">&times;</span>
+            <h2 style="margin-bottom: 30px;">Integrated Campaign Results</h2>
+            <div style="background: #F3F4F6; padding: 30px; border-radius: 15px;">
+                <h3>Channel-wise Performance</h3>
+                <table style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                    <tr><td style="padding: 10px;">Email Marketing:</td><td>15,000 opens, 450 conversions</td></tr>
+                    <tr><td style="padding: 10px;">Social Media:</td><td>250,000 reach, 3,500 clicks</td></tr>
+                    <tr><td style="padding: 10px;">Google Ads:</td><td>120,000 impressions, 2,800 clicks</td></tr>
+                    <tr><td style="padding: 10px;">Total Sales:</td><td>$45,000</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Campaign Testimonial Modal -->
+    <div id="campaignTestimonial" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('campaignTestimonial')">&times;</span>
+            <div style="background: var(--gradient-3); padding: 40px; border-radius: 20px; color: white;">
+                <i class="fas fa-quote-right" style="font-size: 4rem; opacity: 0.3; margin-bottom: 20px;"></i>
+                <p style="font-size: 1.5rem; margin-bottom: 20px;">"The integrated campaign Aasia designed for us was our most successful ever. 380% ROI and 1,200+ new customers. She's a genius!"</p>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&fit=crop" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <h4>Bilal Ahmed</h4>
+                        <p>CEO, ShopOnline.pk</p>
+                        <p style="font-size: 0.9rem;">Leading e-commerce platform</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Web Testimonial Modal -->
+    <div id="webTestimonial" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('webTestimonial')">&times;</span>
+            <div style="background: var(--gradient-1); padding: 40px; border-radius: 20px; color: white;">
+                <i class="fas fa-quote-right" style="font-size: 4rem; opacity: 0.3; margin-bottom: 20px;"></i>
+                <p style="font-size: 1.5rem; margin-bottom: 20px;">"Our new website loads in 1.1 seconds and ranks #1 for our main keywords. Aasia delivered beyond our expectations. Best investment we made."</p>
+                <div style="display: flex; align-items: center; gap: 20px;">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&fit=crop" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <div>
+                        <h4>Usman Khalid</h4>
+                        <p>Founder, TechSolutions.pk</p>
+                        <p style="font-size: 0.9rem;">IT services provider</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;" data-aos="fade-up">Let's Work Together</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8); text-align: center; margin-bottom: 50px;">Get complete transparency and documented results for your projects</p>
+            
+            <div class="contact-form" data-aos="fade-up">
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="text" placeholder="Company Name">
+                    <select style="width: 100%; padding: 15px; margin-bottom: 20px; border: none; border-radius: 10px; background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">
+                        <option style="color: black;">Select Service</option>
+                        <option style="color: black;">Meta Ads</option>
+                        <option style="color: black;">Social Media Marketing</option>
+                        <option style="color: black;">Campaign Management</option>
+                        <option style="color: black;">Website Development</option>
+                    </select>
+                    <textarea rows="5" placeholder="Tell me about your project..."></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo" style="font-size: 1.8rem;">Aasia Nawaz</div>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div>
+                    <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: white; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aasia Nawaz - Digital Marketing Expert. 50+ successful projects delivered.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script>
+        AOS.init();
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function openLightbox(src) {
+            const lightbox = document.createElement('div');
+            lightbox.style.position = 'fixed';
+            lightbox.style.top = '0';
+            lightbox.style.left = '0';
+            lightbox.style.width = '100%';
+            lightbox.style.height = '100%';
+            lightbox.style.background = 'rgba(0,0,0,0.9)';
+            lightbox.style.zIndex = '3000';
+            lightbox.style.display = 'flex';
+            lightbox.style.alignItems = 'center';
+            lightbox.style.justifyContent = 'center';
+            lightbox.style.cursor = 'pointer';
+            
+            const img = document.createElement('img');
+            img.src = src;
+            img.style.maxWidth = '90%';
+            img.style.maxHeight = '90%';
+            img.style.borderRadius = '10px';
+            
+            lightbox.appendChild(img);
+            lightbox.onclick = function() {
+                document.body.removeChild(lightbox);
+            };
+            
+            document.body.appendChild(lightbox);
+        }
+
+        function downloadFile(type) {
+            let content = '';
+            let filename = '';
+            
+            if(type === 'meta') {
+                content = `META ADS CAMPAIGN REPORT - StyleBySarah
+
+CLIENT DETAILS:
+Name: Sarah Khan
+Business: StyleBySarah (Fashion Boutique)
+Location: Lahore, Pakistan
+Founded: 2022
+Instagram: 10K+ followers
+Monthly Revenue: $50K+
+
+CAMPAIGN PERIOD: Jan 2026 - Mar 2026
+
+CAMPAIGN PERFORMANCE:
+Impressions: 220,500
+Clicks: 22,500
+CTR: 3.2%
+Conversions: 820
+Cost per conversion: $0.98
+
+ROI ANALYSIS:
+Ad Spend: $800
+Revenue: $3,840
+ROAS: 4.8x
+Profit: $3,040
+
+CREATIVES USED:
+- 4 Image ads
+- 3 Video ads
+- 2 Carousel ads
+
+AUDIENCE TARGETING:
+- Women 18-45
+- Fashion interested
+- Major cities: Lahore, Karachi, Islamabad
+
+CLIENT TESTIMONIAL:
+"Aasia's Meta Ads campaign brought us incredible results. 4.8x ROAS in just 3 months! She provided daily updates and complete transparency."`;
+            }
+            else if(type === 'social') {
+                content = `SOCIAL MEDIA GROWTH REPORT - Cafe Delights
+
+CLIENT DETAILS:
+Name: Ahmed Raza
+Business: Cafe Delights (Restaurant)
+Location: Karachi, Pakistan
+Founded: 2023
+Locations: 2 (Clifton & DHA)
+Monthly Revenue: $15K+
+
+CAMPAIGN PERIOD: Feb 2026 - Apr 2026
+
+GROWTH METRICS:
+Followers: 2,000 → 8,500 (325% increase)
+Engagement Rate: 1.2% → 4.8%
+Weekly Reach: 5,000 → 50,000+
+Daily Orders from Social: 15 → 40
+
+CONTENT CREATED:
+- 90 Feed posts
+- 25 Reels (food preparation, customer reviews)
+- 60 Stories with polls & Q&As
+- 5 Influencer collaborations (100K+ combined reach)
+
+TOP PERFORMING CONTENT:
+- Biryani preparation reel: 150K+ views
+- Customer review video: 45K+ views
+- Weekend special posts: 5K+ engagements
+
+BUSINESS IMPACT:
+Online orders: +150%
+New customers: 500+
+Brand awareness: Significantly increased in Karachi
+
+CLIENT TESTIMONIAL:
+"Our cafe was struggling with online presence. Aasia transformed our Instagram completely. Now 80% of our customers come through social media!"`;
+            }
+            else if(type === 'campaign') {
+                content = `INTEGRATED CAMPAIGN REPORT - ShopOnline.pk
+
+CLIENT DETAILS:
+Name: Bilal Ahmed
+Business: ShopOnline.pk (E-commerce Electronics)
+Location: Islamabad, Pakistan
+Founded: 2021
+Email Subscribers: 50,000+
+Monthly Revenue: $100K+
+
+CAMPAIGN PERIOD: Mar 2026 - May 2026 (Ramadan Campaign)
+
+CHANNEL-WISE PERFORMANCE:
+Email Marketing:
+- Opens: 15,000 (30% open rate)
+- Clicks: 3,200
+- Conversions: 450
+- Revenue: $18,000
+
+Social Media:
+- Reach: 250,000
+- Clicks: 3,500
+- Conversions: 280
+- Revenue: $11,200
+
+Google Ads:
+- Impressions: 120,000
+- Clicks: 2,800
+- Conversions: 220
+- Revenue: $8,800
+
+Other Channels:
+- Influencers & Referrals: $7,000
+
+TOTAL RESULTS:
+Sales: $45,000
+Conversion Rate: 3.8%
+ROI: 380%
+New Customers: 1,200+
+
+CAMPAIGN ELEMENTS:
+- 12 Email sequences (Ramadan special)
+- 30 Social media posts
+- 8 Google ad groups
+- 5 Influencer partnerships
+- Special discount offers & urgency
+
+CLIENT TESTIMONIAL:
+"The integrated campaign Aasia designed for us was our most successful ever. 380% ROI and 1,200+ new customers. She's a genius!"`;
+            }
+            else if(type === 'web') {
+                content = `WEBSITE DEVELOPMENT REPORT - TechSolutions.pk
+
+CLIENT DETAILS:
+Name: Usman Khalid
+Business: TechSolutions.pk (IT Services)
+Location: Lahore, Pakistan
+Founded: 2020
+Team Size: 15+ employees
+Annual Revenue: $200K+
+
+PROJECT PERIOD: Apr 2026 - Jun 2026
+
+TECHNICAL SPECIFICATIONS:
+Platform: Custom WordPress
+Total Pages: 25
+Features: E-commerce, Blog, Service Portfolios, Contact Forms
+Custom Theme: Yes, fully custom design
+Payment Integration: Stripe, PayPal, Local Bank
+
+PERFORMANCE METRICS (Before vs After):
+Load Time: 3.5s → 1.1s (68% improvement)
+SEO Score: 65% → 99%
+Mobile Score: 58% → 98%
+Core Web Vitals: All passed
+
+TRAFFIC IMPACT (3 months post-launch):
+Monthly Visitors: 500 → 1,900 (280% increase)
+Page Views: 2,000 → 7,600
+Bounce Rate: 65% → 42%
+Time on Site: 1:45 → 4:30
+
+RANKING IMPROVEMENTS:
+- "IT services Lahore": #8 → #1
+- "tech solutions Pakistan": #12 → #2
+- "website development cost": #25 → #4
+Total keywords on Page 1: 18
+
+CLIENT TESTIMONIAL:
+"Our new website loads in 1.1 seconds and ranks #1 for our main keywords. Aasia delivered beyond our expectations. Best investment we made."`;
+            }
+            
+            filename = type.charAt(0).toUpperCase() + type.slice(1) + '-Complete-Case-Study.txt';
+            
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+        }
+
+        // Contact form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will respond within 24 hours with case studies relevant to your project.');
+        });
+
+        // Navbar scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if(window.scrollY > 50) {
+                nav.style.background = 'rgba(255,255,255,0.98)';
+            } else {
+                nav.style.background = 'rgba(255,255,255,0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
